@@ -1,0 +1,203 @@
+/* CSS reset */
+*
+{
+    margin:0;
+    padding:0;
+}
+
+/*styling of the menu*/
+ul.mynav {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: white;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-size:1.15em;
+    text-align:center;
+
+}
+
+/* Horizontal position of the menu (combination between overflow:hidden on ul.mynav and this one*/
+ul.mynav li{
+    display:inline-block;
+}
+
+/*styling of each link including links with submenus*/
+ul.mynav li a, drop {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.15em;
+    width:150px;
+    padding-top:0.3em;
+    padding-bottom:0.3em;
+    color:black;
+}
+
+
+/*Change the color of the active link*/
+ul.mynav li a.active {
+    color: #009900;
+}
+
+/* Change the link color on hover */
+ul.mynav li a:hover, .drop:hover {
+    background-color: #009900;
+    color: #fff;
+}
+
+
+/* No display of the submenu items unless click or hover.
+Don't try to use a longer path to it because it breaks. */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(102, 204, 0, 0.8);
+    z-index:100;
+}
+/* Style the dropdown menu */
+.dropdown-content a {
+    color: #000 !important;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    border-bottom: solid 1px white;
+}
+
+/* This makes the dropdown links go down on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #009900 ;
+    color:#fff !important;
+}
+
+/*No display of the collapsed menu icon*/
+ul.mynav li.icon {
+    display: none;
+}
+
+/* No display of the sublinks menu carrot */
+ul.mynav li.dropdown span.sub-toggle {
+    display:none;
+}
+
+
+@media screen and (max-width:750px) {
+	/*this styles the display of the menu on smaller screen*/
+	ul.mynav {
+        border-top: 1px solid #555;
+		border-bottom: 1px solid #555;
+		}
+		
+	ul.mynav li {
+		float: left; /*turns the nav to top menu*/
+		}
+    #icon{
+        width:80px;
+        font-size:1em;
+        padding-top: 0.1em;
+        padding-bottom: 0.1em;
+        color:black;
+    }
+    
+	ul.mynav li, ul.mynav li.dropdown{
+		display: none;
+		/*doesn't display the buttons */
+		}
+  ul.mynav li.icon {
+	  /*makes the icon visible*/
+    float: right;
+    display:inline;
+      color:black;
+  }
+}
+
+@media screen and (max-width:750px) {
+    /*the menu which appears after we click the icon*/
+  ul.mynav.responsive {
+      position: relative;
+      overflow:visible;
+    }
+  ul.mynav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+      
+  }
+  ul.mynav.responsive li {
+    float: none;
+    display: inline;
+     
+  }
+    
+  ul.mynav.responsive li a {
+    border-top: 1px solid #fff;
+	display: block;
+    text-align: center;
+    width:100%;
+
+      
+  }
+    
+  /* display of the little carrot on the first dropdown menu*/
+    ul.mynav.responsive li.dropdown span.sub-toggle {
+        color: #000;
+        font-size:2em;
+        display:inline-block;
+        position:absolute;
+        right:0;
+        top:50px;
+        width:20%;
+        text-align: right;
+        padding-right:15%;
+       
+    }
+    
+    /*Doesn't show the dropdown menu when you hover over it*/
+    ul.mynav.responsive li.dropdown:hover .dropdown-content{
+        display:none;
+        width:100%;
+        background-color: #fff;
+        color:#000;
+        position:relative;
+    } 
+    
+    .dropdown-content a{
+     display: none;   
+    }
+    /* Change the icon on click */
+    .container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 25px;
+    height: 4px;
+    background-color: #000;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 4px) ;
+    transform: rotate(-45deg) translate(-9px, 4px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-7px, -3px) ;
+    transform: rotate(45deg) translate(-7px, -3px) ;
+}
+}
+    
