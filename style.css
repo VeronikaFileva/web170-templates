@@ -1,3 +1,13 @@
+/*
+Theme Name: Healthy
+Theme URI: http://wordpress.org/themes/healthy
+Author: Veronika Fileva
+Author URI: http://veronikafileva.com/
+Description: This is a little fun theme I created as my first wordpress upload experiment. I'm a new developer, forgive me the bugs!
+Version: 1.0
+Tags: green, salad, bugs 
+*/
+
 /* CSS reset */
 *
 { margin: 0;
@@ -18,16 +28,15 @@ header{
     }
 
 h1{
-    font-size: 2em;
     text-align: center;
     color:#009900;
     
 }
 
 h2{
-    /*font-size:1.7em;*/
     color:#009900;
     text-align: center;
+	font-size:1.7em;
 }
 
 h3{
@@ -44,6 +53,11 @@ p{
 
 .righttext{
     font-family: 'Kaushan Script', cursive;
+}
+
+.ingredients{
+	padding-left:5%;
+	font-size:1.3em;
 }
 /* Rounded Images */
 
@@ -149,6 +163,38 @@ footer{
     font-family: 'Kaushan Script', cursive;
     font-size:3em;
 }
+
+.prep{
+	padding-top:2em;
+	padding-bottom: 1em;
+	color: #009900;
+}
+
+a{
+	text-decoration: none;
+}
+
+#content img.featured{
+	margin-bottom:10px;
+}
+
+img.wp-post-image {}
+.attachment-thumbnail {
+	float: left;
+	margin:0;
+}
+img.attachment-medium {}
+img.attachment-large {}
+img.attachment-full {}
+
+.post-excerpt{
+	overflow:hidden;
+	margin-top:20px;
+}
+
+.post{
+	text-align: justify !important;
+}
 /* Desktop only */
 
 @media all and (min-width:970px) {
@@ -179,19 +225,28 @@ footer{
     
     #brand{
         padding-bottom: .3em;
+		font-size:2.5em;
+		padding-top:1em;
     }
+	
     .righttext{
         float:left;
-        padding:1em;
         width:35%;
-        /*background-color: rgba(255, 255, 255, 0.7);*/
-        font-size:1.4em;
-        border:1px;
-        margin-left:5%;
-        margin-top:2%;        
+		margin-left:5%;
+        
     }
     
-
+	.righttext h2{
+		padding-top: .3em;
+		font-size:2.1em;
+	}
+	.righttext h3{
+		font-size:1.4em;
+	}
+	
+	p.welcome{
+		font-size:1.4em;
+	}
 /* Round images positioning */
     .pictures{
         width:100%;
@@ -258,6 +313,7 @@ footer{
         left:17%;
     }
   
+	/*Text bellow pictures on Home Page */
     .text{
         width:58%;
         padding:1em;
@@ -271,13 +327,22 @@ footer{
         float:right;
         margin-right: 5%;
         padding-top:2em;
+		width: 15%;
     }
    
+	/*Recipe Description area */
+	.recipe{
+		width:60%;
+		float:left;
+		margin-left:5%;
+	}
+	
     .steps{
-        width:60%;
-        margin:0 auto;
-        position:relative;
+        width:20%;
+		float:left;
+		position:relative;
         padding-bottom:2em;
+		padding-top:2em;
     }
     
     #stepstext{
@@ -285,27 +350,21 @@ footer{
         left:8%;
     }
     
-    .recipe{
-        width: 20%;
+	
+    .middle{
+        width:50%;
         float:left;
         margin-left:5%;
-        padding-top:2em;
-        
-        
-    }
-    
-    .middle{
-        width:35%;
-        float:left;
-        margin-left:.5%;
+		margin-right:5%;
         padding:1em;
         text-align:justify;
     }
     .recipetext{
-        padding-bottom:6em;
+        padding-bottom:7em;
+		font-size:1.3em;
     }
-    
-       /* Main Page */
+   
+       /* Gate Page */
     .recipepage1{
         position:relative;
         width:100%;
@@ -393,17 +452,25 @@ footer{
     
     .righttext{
         float:left;
-        padding:1em;
-        width:35%;
-        /*background-color: rgba(255, 255, 255, 0.7);*/
-        font-family: 'Kaushan Script', cursive;
-        /*font-size:1.4em;*/
-        border:1px;
+        padding-bottom: 1em;
         margin-left:5%;
-        margin-top:1%;        
+        margin-top:1%;
+		width:40%;
     }
-    
-
+	
+	.righttext h2{
+		font-size:1.3em;
+	}
+	
+	.righttext h3{
+		font-size:1.2em;
+		padding-top:.2em;
+	}
+	
+	p.welcome{
+		font-size:1.1em;
+	}
+	
 /* Round images positioning */
     .pictures{
         width:100%;
@@ -414,8 +481,9 @@ footer{
     
     }
     #brand{
-        font-size:1.6em;
+        font-size:1.5em;
     }
+	
     .label{
         font-size: 1.1em;
     }
@@ -486,11 +554,48 @@ footer{
     
     sidebar{
         float:right;
-        margin-right: 7%;
+        margin-right: 5%;
         padding-top:2%;
+		width:10%;
     }
 
-    /*Main Page Styles*/
+	.recipe{
+		width:70%;
+		float:left;
+		margin-left:7%;
+	}
+	
+	.ingredients{
+	padding-left:5%;
+	font-size:1.1em;
+}
+	.steps{
+        width:20%;
+		float:left;
+		position:relative;
+        padding-bottom:2em;
+		padding-top:2em;
+    }
+	
+	#stepstext{
+        top:35%;
+        left:8%;
+    }
+    
+	
+    .middle{
+        width:50%;
+        float:left;
+        margin-left:5%;
+		margin-right:5%;
+        padding:1em;
+        text-align:justify;
+    }
+    .recipetext{
+        padding-bottom:1.6em;
+		font-size:1.2em;
+    }
+    /*Gateway Page Styles*/
     
     .recipepage{
         position:relative;
@@ -542,15 +647,22 @@ nav{
     #brand{
         font-family: 'Kaushan Script', cursive;
         padding-bottom: 1em;
+		font-size:2.5em;
     }
     
     .righttext{
-        width:90%;
-        margin:0 auto;
-        font-family: 'Lato', sans-serif;
-    }
+        width:100%;
+		padding-bottom:1em;
+        font-family: 'Kaushan Script', cursive; 
+	}
+	
+	p.welcome{
+		font-size:1.4em;
+		width: 90%;
+		padding-left:5%;
+	}
     .round{
-    width:70%;
+    width:65%;
     padding-left:15%;
     padding-right:15%;
     padding-top:5%;
@@ -584,4 +696,42 @@ nav{
     sidebar{
         margin-left:25%;
     }
+	
+	/*Recipe Page*/
+	.recipe{
+		width:90%;
+		margin:auto;
+	}
+	
+	.steps{
+        width:65%;
+		margin: 0 auto;
+        padding-bottom:1em;
+		padding-top:1em;
+		position: relative;
+    }
+	
+	#stepstext{
+		font-size: 1.4em;
+        top:38%;
+        left:25%;
+    }
+    
+	
+    .middle{
+        width:100%;
+        text-align:justify;
+    }
+    .recipetext{
+        padding-bottom:1em;
+    }
+	
+	.ingredients {
+		padding-left:10%;
+		background-color: rgba(102, 204, 0, 0.5);
+		padding-bottom: 1em;
+	}
+	.righttext h3{
+		background-color: rgba(102, 204, 0, 0.5);
+	}
 }
