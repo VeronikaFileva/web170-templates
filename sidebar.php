@@ -20,7 +20,16 @@
 				<?php endif; ?>
 			
 			<br />
+	<!--Begin Quote -->
 	
+			<?php if (get_post_meta($post->ID, 'Quote', true)) : //check to see if there is a quote ?>
+			
+			<blockquote><?php echo (get_post_meta($post->ID, 'Quote', true)); //write the quote ?></blockquote>
+	
+			<?php endif; ?>
+	
+	<!--End Quote -->
+	<br ?>
              <img src="<?php bloginfo('template_directory'); ?>/images/add.JPG" /><br />
 			
 </sidebar>
