@@ -30,6 +30,12 @@
 	
 	<!--End Quote -->
 	<br />
+	
+	<!--Begin Dynamic Sidebar Widget -->
+	<?php dynamic_sidebar(1); //call our widgets ?>
+	<!--End Dynamic Sidebar -->
+	
+			<br />
              <img src="<?php bloginfo('template_directory'); ?>/images/add.JPG" /><br />
 			
 </sidebar>
