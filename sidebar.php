@@ -20,6 +20,7 @@
 				<?php endif; ?>
 			
 			<br />
+	
              <img src="<?php bloginfo('template_directory'); ?>/images/add.JPG" /><br />
 			
 </sidebar>

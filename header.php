@@ -23,8 +23,22 @@
 	<!-- end WP Head -->
 </head>
 <body <?php body_class(); ?>>
-	<?php wp_nav_menu( array( 'theme-location' => 'main-menu', 'container' => 'nav', 'items_wrap' => '<ul id="menu" class="%2$s">%3$s</ul>', ) ); ?>
 	
+	<!-- Navigation -->
+	
+	<div id="navigation">
+    <!-- Responsive Navigation -->
+    	<div id="mobile" onclick="myFunction(this)">
+			<div class="container">
+  				<div class="bar1"></div>
+  				<div class="bar2"></div>
+  				<div class="bar3"></div>
+			</div>
+			 <!--here type what you want to appear next to the hamburger icon or leave empty-->
+		</div>
+	
+	<?php wp_nav_menu( array( 'theme-location' => 'main-menu', 'container' => 'ul id="menu"', 'items_wrap' => '<ul id="menu" class="%2$s">%3$s</ul>', ) ); ?>
+	</div>
     
     <main>
       
@@ -35,5 +49,5 @@
             <h1 id="brand">Healthy Yummy Smart</h1>
 				<br />
             <p class="welcome">The best vegetarian, vegan and pescitarian recipes on the web! Cook smart! Feel great!</p> 
-          
+			</article>
         </section>
