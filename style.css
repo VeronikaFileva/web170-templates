@@ -172,6 +172,7 @@ footer{
 
 a{
 	text-decoration: none;
+	color: black;
 }
 
 #content img.featured{
@@ -329,6 +330,12 @@ img.attachment-full {}
         padding-top:2em;
 		width: 15%;
     }
+	
+	blockquote{
+		font-family: 'Kaushan Script', cursive;
+		color:#009900;
+		font-size: 1.7em;
+	}
    
 	/*Recipe Description area */
 	.recipe{
