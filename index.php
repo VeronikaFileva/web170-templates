@@ -20,7 +20,9 @@
 	<!-- end WP Head -->
 </head>
 <body <?php body_class(); ?>>
-	 <div id="navigation">
+	 	<!-- Navigation -->
+	
+	<div id="navigation">
     <!-- Responsive Navigation -->
     	<div id="mobile" onclick="myFunction(this)">
 			<div class="container">
@@ -30,47 +32,20 @@
 			</div>
 			 <!--here type what you want to appear next to the hamburger icon or leave empty-->
 		</div>
-        <ul id="menu">
-            <li>
-				<a href="#" class="active">Home</a>
-			</li>
-            <li class="dropdown">
-                <a class="dropbtn">Recipes</a>
-                <div class="dropdown-content" >
-                    <a href="hats.html">Soups</a>
-                    <a href="gloves.html">Salads</a>
-                    <a href="shoes.html">Snacks</a>
-                    <a href="pumpkins.html">Hot Meals</a>
-					<a href="desserts.html">Desserts</a>
-                </div>
-            </li>
-            <li>
-				<a href="#">Blog</a>
-			</li> 
-			<li>
-				<a href="#">Tips</a>
-			</li> 
-			<li>
-				<a href="#">Contact</a>
-			</li> 
-        </ul>
-   </div>
+	
+	<?php wp_nav_menu( array( 'theme-location' => 'main-menu', 'container' => 'ul id="menu"', 'items_wrap' => '<ul id="menu" class="%2$s">%3$s</ul>', ) ); ?>
+	</div>
+    
     <main>
       
         <section class="green">
-            <img class="leftimage" src="images/salads.jpg" alt="Meal of the day!" />
+            <img class="leftimage" src="<?php bloginfo('template_directory'); ?>/images/salads.jpg" alt="Meal of the day!" />
             
-            <article class="righttext">
-            	<h2>Tomato Mozzarella Salad</h2>
-                <h3>Ingredients</h3>
-                <p class="ingredients">5 Vine Tomatoes<br />
-               	   1 Mozzarella Cheese<br />
-                   1 TbSp Pesto Sauce <br />
-                   Fresh Basil<br />
-                   Pink Salt<br />
-             
-            </article>
-          
+           <article class="righttext">
+            <h1 id="brand">Healthy Yummy Smart</h1>
+				<br />
+            <p class="welcome">The best vegetarian, vegan and pescitarian recipes on the web! Cook smart! Feel great!</p> 
+			</article>
         </section>
         
 		<!-- Recipe Area -->
@@ -91,6 +66,21 @@
 		</section>
 		
 		<sidebar>
+			<ul class="sub-navigation-items">
+				<?php  if ($post->post_parent) { // if the page has a parent...
+							wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => __(''))); // ...list the sub-pages with no title
+						} else { // if the page does not have a parent...
+							wp_list_pages(array('child_of' => $post->ID, 'title_li' => __(''))); // ...list the sub-pages with no title
+								} ?>
+				</ul>
+				<?php endif; // end if we are in "pages" ?>
+				<?php if (!(is_page())) : // if we are not in "pages"... ?>
+				<h2 class="sub-navigation-title">Blog</h2>
+				<ul class="sub-navigation-items">
+					<?php wp_list_categories(array('title_li' => __(''))); // ...list the categories with no title ?>
+				</ul>
+				<?php endif; ?>
+			<br />
 			<img src="<?php bloginfo('template_directory'); ?>/images/add.JPG" /><br />
 
 		</sidebar>

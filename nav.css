@@ -4,7 +4,8 @@
   padding: 0; }
 
 #navigation {
-  width: 100%; }
+  width: 100%;
+}
 
 #mobile {
   display: none; }
@@ -42,23 +43,25 @@
       display: none;
       border: none; } }
 
-.menuitem {
+.menu-item {
   float: left;
   /*needed for horizontal menu */
   width: 17%;
-  /*this sets the width of the main nav items on desktop*/ }
+  /*this sets the width of the main nav items on desktop*/
+  
+}
   @media (max-width: 48.75em) {
-    .menuitem {
-      width: 20%;
+    .menu-item {
+     width: 20%;
       /*this sets the width of the main nav items on tablet*/ } }
   @media (max-width: 31.25em) {
-    .menuitem {
+    .menu-item {
       display: block;
       width: 100%;
       clear: both;
       border-top: 1px solid white; } }
 
-.menuitem a, .dropbtn {
+.menu-item a, .menu-item-has-children a {
   display: block;
   /*this helps for centering of the text of the menu items */
   color: black;
@@ -69,22 +72,16 @@
   /*here I removed the left and right padding, because it was causing issues with the responsiveness of the page*/
   text-decoration: none; }
   @media (max-width: 31.25em) {
-    .menuitem a, .dropbtn {
+    .menu-item a, .menu-item-has-children a {
       position: relative;
+	  width:60%;
+	  margin:auto;
       clear: both; } }
 
 /* Change the link color on hover */
-li a:hover, .dropdown:hover .dropbtn {
+.menu-item a:hover, .menu-item-has-children:hover .menu-item-has-children a:hover {
   background-color: #009900;
   color: white; }
-
-.active {
-	color: #009900;
-}
-
-.active:hover {
-	color:white;
-}
 
 .current-menu-item a, .current-menu-parent a {
   color: #009900;
@@ -105,14 +102,22 @@ li a:hover, .dropdown:hover .dropbtn {
   @media (max-width: 31.25em) {
     .dropdown-content {
       display: none;
-      position: relative; } }
+      position: relative; } 
+}
 
 .sub-menu {
-display: none;
+	display: none;
+	/*hides the submenu if not hovered over or clicked*/
+    position: absolute;
+    /*this positions the vertical submenu under it's parent li on desktop*/
+  	z-index: 1;
 }
 @media (max-width: 31.25em) {
-	display:block;
+	.sub-menu {
+      display: none;
+      position: relative; }
 }
+
 
 .dropdown-content a {
   background-color: rgba(102, 204, 0, 0.5); }
@@ -127,7 +132,17 @@ display: none;
       display: block;
       width: 100%; } }
 
+
+  @media (max-width: 31.25em) {
+    .sub-menu a {
+      display: block;
+      width: 100%; } }
+
 .dropdown-content a:hover {
+  background-color: #009900;
+  /*gives color to the submenu items on hover */ }
+
+.sub-menu a:hover {
   background-color: #009900;
   /*gives color to the submenu items on hover */ }
 
@@ -150,6 +165,8 @@ display: none;
       /* removes the hover from the mobile view */
       position: relative;
       /* This here is very important because makes the submenu push down the rest of main menu items instead of covering them*/ } }
+
+
 
 /* The menu icon on mobile */
 .container {

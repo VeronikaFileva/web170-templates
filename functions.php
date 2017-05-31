@@ -9,5 +9,7 @@ Version: 1.0
 Tags: green, salad, bugs 
 */
 
+//Register My Menus
+register_nav_menus(array('main-menu' => __( 'Main' ),) );
 
 ?>
