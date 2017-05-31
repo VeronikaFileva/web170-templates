@@ -29,7 +29,7 @@
 			<?php endif; ?>
 	
 	<!--End Quote -->
-	<br ?>
+	<br />
              <img src="<?php bloginfo('template_directory'); ?>/images/add.JPG" /><br />
 			
 </sidebar>
