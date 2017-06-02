@@ -17,8 +17,10 @@
 	});
 	</script>
 	<script> 
+	//this adds a little span to toggle my menu	
+	$(".menu-item-has-children > a").after('<span class="sub-toggle">&#711;</span>');
 	$(document).ready(function(){
-		$(".menu-item-has-children").click(function(){
+		$(".sub-toggle").click(function(){
 			$(".sub-menu").slideToggle("slow");
 		});
 	});

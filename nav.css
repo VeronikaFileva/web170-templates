@@ -43,7 +43,7 @@
       display: none;
       border: none; } }
 
-.menu-item {
+#menu > li {
   float: left;
   /*needed for horizontal menu */
   width: 17%;
@@ -51,11 +51,11 @@
   
 }
   @media (max-width: 48.75em) {
-    .menu-item {
+    #menu > li {
      width: 20%;
       /*this sets the width of the main nav items on tablet*/ } }
   @media (max-width: 31.25em) {
-    .menu-item {
+    #menu > li {
       display: block;
       width: 100%;
       clear: both;
@@ -111,6 +111,9 @@
     position: absolute;
     /*this positions the vertical submenu under it's parent li on desktop*/
   	z-index: 1;
+	list-style-type: none;
+	background-color: rgba(102, 204, 0, 0.5);
+	color: white !important;
 }
 @media (max-width: 31.25em) {
 	.sub-menu {
@@ -120,7 +123,7 @@
 
 
 .dropdown-content a {
-  background-color: rgba(102, 204, 0, 0.5); }
+    background-color: rgba(102, 204, 0, 0.5); }
   @media (max-width: 48.75em) {
     .dropdown-content a {
       float: left;
@@ -166,6 +169,25 @@
       position: relative;
       /* This here is very important because makes the submenu push down the rest of main menu items instead of covering them*/ } }
 
+.menu-item-has-children:hover .sub-menu {
+    display: block;
+  /*makes the vertical submenu appear on hover on desktop */
+    width: 15.3%;
+  /*this width has to be the same as the width of li; it's calculated as a % from the nav parent element */ }
+ @media (max-width: 48.75em) {
+    .menu-item-has-children:hover .sub-menu {
+     width: 100%;
+      /* makes the horizontal submenu same width as the main menu on tablet*/
+      position: absolute;
+      /* this works together with left:0; However, it's set in .sub-menu to the same value and the code will not break if I delete it. I leave it only so that it's easier for future reference. */
+      left: 0;
+      /* this combined with position:absolute; positions the horizontal submenu from the beginning of the screen so that it takes the full length of the main menu*/ } }
+@media (max-width: 31.25em) {
+    .menu-item-has-children:hover .sub-menu {
+      display: none;
+      /* removes the hover from the mobile view */
+      position: relative;
+      /* This here is very important because makes the submenu push down the rest of main menu items instead of covering them*/ } }
 
 
 /* The menu icon on mobile */
@@ -196,3 +218,29 @@
   transform: rotate(45deg) translate(-8px, -8px); }
 
 /*# sourceMappingURL=styles.css.map */
+
+/* styling of the sub-toggle thingy */
+@media (max-width: 31.25em) {
+.menu-item-has-children{
+	position: relative;
+}
+}
+
+.sub-toggle{
+	display: none;
+}
+@media (max-width: 31.25em) {
+	.sub-toggle{
+		display: inline-block;
+		position: absolute;
+		right: 2%;
+		top: 1%;
+		font-size: 2em;
+		padding-left:5%;
+		padding-right: 5%;
+	}
+	.sub-toggle:hover{
+		color: white;
+		background-color: #009900;
+	}
+}
