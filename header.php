@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title><?php bloginfo('name'); ?></title>
+	<title><?php get_my_title_tag(); ?></title>
     <meta charset="utf-8" />
     <meta name="robots" content="no index, no follow" />
     <meta name="viewport" content="width=device-width" /><!-- Responsive Website -->
+	<meta name="description" content="<?php echo strip_tags(get_the_excerpt()); ?>" />
     
     <!-- Styles-->
     <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" />
